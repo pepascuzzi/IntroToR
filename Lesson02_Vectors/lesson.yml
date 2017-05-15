@@ -609,7 +609,9 @@
     dataframe, and will be convered in the next lesson.
 
 - Class: text
-  Output: Time for a short quiz.
+  Output: Time for a short quiz.  Use the help menu or try various answers 
+    as much as you need to.  There is no penalty for incorrect answers, but 
+    you must find the correct answer before you can proceed.  
 
 - Class: cmd_question
   Output: Enter the expression that will extract the values at positions 

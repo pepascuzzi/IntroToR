@@ -168,7 +168,7 @@
   Hint: Enter 'log(x=10, base=10)' exactly but omit the quotes.
 
 - Class: text
-  Output: This is our first classic R function.  Functions are essentially 
+  Output: This is our first typical R function.  Functions are essentially 
     small programs that are designed to perform a specific task.
 
 - Class: text
@@ -182,7 +182,8 @@
   Output: The arguments for the 'log()' function are 'x' and 'base'.  
     NOTE - FUNCTIONS ARE ALWAYS FOLLOWED BY PARENTHESIS THAT ENCLOSE 
     THE ARGUMENTS PASSED TO THE FUNCTION.  THE PARENTHESIS ARE REQUIRED 
-    EVEN IF NO ARGUMENTS ARE PASSED!
+    EVEN IF NO ARGUMENTS ARE PASSED!  MULTIPLE ARGUMENTS TO A FUNCTION ARE 
+    SEPARATED BY COMMAS.
 
 - Class: text
   Output: If you forget to follow a function call with parenthesis, R will 
@@ -190,14 +191,38 @@
     have a need to display or alter the underlying code for a function.
 
 - Class: text
-  Output: The 'log()' function has two arguments, 'x' and 'base'.  The 
-    first is required because the function must have a numeric value to 
-    work with, i.e. you cannot take a log of nothing!
+  Output: The 'log()' function has two arguments, 'x' and 'base'.  The arguments
+    are separated by commas.  If you forget the commas, R will get confused.
+
+- Class: text
+  Output: Some arguments for a function may have default values, values that 
+    were preset by the person that wrote the function.  If the default value 
+    is fine for you purpose, you do not need to explicitly define that 
+    argument.
+
+- Class: text
+  Output: For example, the default value of 'log()' for 'base' is base e, the 
+    natural log.  If you want the natural log, you do not need to define 'base'.
+
+- Class: text
+  Output: Arguments that do not have default values must be explicitly defined 
+    when you call the function.  For example, you must define 'x' when you 
+    call 'log()' because you cannot take the log of nothing, and R will generate 
+    an error.
+
+- Class: text
+  Output: In an interactive R session, most errors will simply affect the 
+    statement that produced them.  However, R errors can have more serious effects.  
+    For example, R errors can disrupt 'swirl', kicking you out of your current 
+    session.
+
+- Class: text
+  Output: To demonstrate a missing argument error with 'log()', I need to 
+    use 'try()', an R function that can minimize the effects of an error.  It 
+    is unlikely that you will ever need to use 'try()' for routine R coding.
 
 - Class: cmd_question
-  Output: Enter 'try(log())' to generate an argument missing error.  I had 
-    to next 'log()' in a call to 'try()' so that the resulting error does 
-    not kick you out of 'swirl'.
+  Output: Enter 'try(log())' to generate an argument missing error.
   CorrectAnswer: try(log())
   AnswerTests: omnitest(correctExpr='try(log())')
   Hint: Enter 'try(log())' exactly but omit the quotes.
@@ -221,8 +246,8 @@
   Output: When you assign a value to an argument in a function call, you 
     should use a single equals sign, '='.  Some people like to include spaces 
     before or after the '=', but I prefer to keep my code more compact.  
-    NOTE - GENERALLY R IS NOT SENSITIVE TO SPACES UNLIKE UNIX WHICH IS VERY 
-    SENSITIVE TO SPACES.
+    NOTE - GENERALLY R IS NOT SENSITIVE TO SPACES AND USE OF SPACES IS 
+    OFTEN A QUESTION OF CODING STYLE.
 
 - Class: text
   Output: How do you determine the arguments for a function and the default 
@@ -346,25 +371,27 @@
   Hint: Enter '??t.test' exactly but omit the single quotes.
 
 - Class: text
-  Output: Time for a short quiz.
+  Output: Time for a short quiz.  Use the help menu or try various answers 
+    as much as you need to.  There is no penalty for incorrect answers, but 
+    you must find the correct answer before you can proceed.  
 
 - Class: cmd_question
-  Output: Enter the expression that will search for information on the 
-    'round' function.  DO NOT USE THE SHORTCUT!
+  Output: Enter the expression that will search for help for the 
+    'round()' function.  DO NOT USE THE SHORTCUT!
   CorrectAnswer: help(round)
   AnswerTests: omnitest(correctExpr='help(round)')
   Hint: Search for the function 'round' not the text pattern!
 
 - Class: cmd_question
-  Output: How many arguments can you pass to 'round()'?
+  Output: How many arguments does 'round()' have?
   CorrectAnswer: '2'
   AnswerTests: omnitest(correctVal='2')
   Hint: Read the help page for Round carefully!
 
 - Class: cmd_question
   Output: Enter the expression that will round 10.22 to one 
-    decimal and assign that to a variable with the name 'my.result'.  Remember 
-    to explicitly assign values to all arguments!
+    decimal and assign that to a variable with the name 'my.result'.  
+    Remember to explicitly assign values to all arguments!
   CorrectAnswer: my.result <- round(x=10.22, digits=1)
   AnswerTests: omnitest(correctExpr='my.result <- round(x=10.22, digits=1)')
   Hint: Remember to explicitly assign values to all arguments!
@@ -374,11 +401,12 @@
     operator, '^'.  DO NOT USE THE SHORTCUT!
   CorrectAnswer: help(`^`)
   AnswerTests: omnitest(correctExpr='help(`^`)')
-  Hint: Enter 'help(`^`)' exactly but omit the single quotes.
+  Hint: You will need to use backquotes.
 
 - Class: cmd_question
   Output: Enter the expression that will that will multiply 'my.result' by 
-    2 then square it.  Swirl will check for the correct numeric answer.
+    2 then square it.  There is more than one correct way to write this 
+    expression.  Therefore, R will check for the correct answer value.
   CorrectAnswer: (my.result*2)^2
   AnswerTests: omnitest(correctVal=416.16)
   Hint: Remember to use parentheses!
@@ -418,8 +446,8 @@
 - Class: text
   Output: On a Mac you should see something like '/Users/YourName'.  On a 
     Windows machine, you should see something like 'C:\\Users\\YourName\\Documents'.  
-    This information should help you tp locate your home directory using the Finder (Mac) or 
-    File Explorer (Windows), later.
+    This information should help you to locate your home directory using the 
+    Finder (Mac) or File Explorer (Windows), later.
 
 - Class: text
   Output: Now we can write the key for lesson01 to a file named "lessonKeys.txt".
