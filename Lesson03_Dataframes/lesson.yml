@@ -186,7 +186,7 @@
 
 - Class: text
   Output: The dimensions of an object are always given with rows first then 
-    columns.  This data set has 9121 rows and 24 columns.  Each row corresponds 
+    columns.  This data set has 9121 rows and six columns.  Each row corresponds 
     to one sample, and each column to one variable.
 
 - Class: text
@@ -528,7 +528,7 @@
   Hint: Enter 'high.ar.study.tbl' omitting the quotes.  
 
 - Class: text
-  Output: Now, we have a more complete of the distribution of high AR expressing 
+  Output: Now, we have a more complete picture of the distribution of high AR expressing 
     samples across the cancer studies.  
 
 - Class: text
@@ -717,7 +717,7 @@
     published literature to support this idea.  
 
 - Class: text
-  Output: We could certainly do more to explore 'ar.value' using the numerous 
+  Output: We could do more to explore 'ar.value' using the numerous 
     functions that work on data frames, but this lesson is intended only as 
     an introduction.  
 
@@ -892,18 +892,15 @@
   AnswerTests: omnitest(correctVal='965')
   Hint: You might want to make a table of a logical vector.
 
-- Class: mult_question
-  Output:  What is the most frequent 'Mutation' of AR for the samples in 
-    'ar.exp'?  Do not guess.  Use what you have learned to determine the 
-    answer.
-  CorrectAnswer: Q58L
-  AnswerChoices: Q58L; L55Q; Q62L; E81Q
-  AnswerTests: omnitest(correctVal='Q58L')
+- Class: cmd_question
+  Output:  How many samples have the Q58L mutation?
+  CorrectAnswer: 8
+  AnswerTests: omnitest(correctVal='8')
   Hint: You might want to make a table.
 
 - Class: cmd_question
   Output: Write the expression that would extract the 'Cancer.Study' with 
-    the "Q58L"" 'Mutation'.  Use the following operators in your expression 
+    the "Q58L" 'Mutation'.  Use the following operators in your expression 
     '$', '[]' and '=='.  Remember that "Q58L" is a character string and must 
     be enclosed by quotes.
   CorrectAnswer: ar.exp$Cancer.Study[ar.exp$Mutation == "Q58L"]
